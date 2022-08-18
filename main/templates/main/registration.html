@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+<!-- Perhaps different navbar at user registration -->
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/registration.css'%}">
+
+<div class="registration">
+    <form class="registration-form" method="POST">
+        <div class="registration-fields">
+            <input class="hello" type="text" placeholder="Username">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Password">
+            <input type="text" placeholder="Re-enter Password">
+        </div>
+        {% csrf_token %}                
+        {{register_form}}        
+        <button class="registration-button" type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+.registration-form {   
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 30vh;
+    margin: 5vh 5vh;
+}
+
+.registration-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    width: 30vh;                
+}
+.registration-fields > input[type=text] {
+    border: 1px solid black;
+    border-radius: .3rem;
+}
+
+.registration-button {
+    margin: 0 2.5vh;
+    border: 1px solid black;
+    border-radius: .2rem;
+
+    background-color: black;
+    color: white;
+}
