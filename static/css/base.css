@@ -1,0 +1,32 @@
+:root {
+    --nav-height: 10vh;
+}
+.project-container{
+    font-family: "Gill Sans", sans-serif;    
+}
+
+.navbar {
+    height: var(--nav-height);
+    background-color: black;
+    color: white;
+
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin: 0 1rem;    
+}
+.navlinks {
+    margin: 0 1rem;  
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.home {
+    
+}

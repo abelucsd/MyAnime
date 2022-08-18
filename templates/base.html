@@ -1,0 +1,15 @@
+{% load static %} 
+<body class="project-container">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <div class="navbar">
+        <div class="title">My Anime</div>
+        <ul class="navlinks">
+            <li class="home">Home</li>
+            <li class="decide">Decide</li>
+        </ul>
+    </div>
+    <div class="pages">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
