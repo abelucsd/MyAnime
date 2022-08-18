@@ -3,17 +3,22 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <div class="navbar">
         <div class="title">My Anime</div>
-        <ul class="navlinks">
-            <li class="home">                                
-                <a href="{% url 'main:home' %}">Home</a>
-            </li>
-            <li class="decide">
-                <a href="{% url 'decider:temp' %}">Decide</a>
-            </li>
-            <li class="favorites">
-                <a href="{% url 'favorites:add_favorite' %}">Favorites</a>
-            </li>
-        </ul>
+        {% if user.is_authenticated %}
+            <ul class="navlinks">            
+                <li class="home">
+                    <a href="{% url 'main:home' %}">Home</a>
+                </li>
+                <li class="decide">
+                    <a href="{% url 'decider:temp' %}">Decide</a>
+                </li>
+                <li class="favorites">
+                    <a href="{% url 'favorites:add_favorite' %}">Favorites</a>
+                </li>            
+                <li class="logout">
+                    <a href="{% url 'main:logout_request' %}">Logout</a>
+                </li>
+            </ul>
+        {% endif %}
     </div>
     <div class="pages">
         {% block content %}

@@ -5,6 +5,11 @@
     font-family: "Gill Sans", sans-serif;    
 }
 
+.pages {
+    display: flex;
+    justify-content: center;    
+}
+
 .navbar {    
     height: var(--nav-height);
     background-color: black;
