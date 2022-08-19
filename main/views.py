@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
-from .forms import RegistrationForm
+from .forms import RegistrationForm, CustomAuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm
 
 def home(request):
     if request.user.is_authenticated:
@@ -13,8 +12,8 @@ def home(request):
 
 def login_request(request):
     if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
+        form = CustomAuthenticationForm(request, data=request.POST)        
+        if form.is_valid():            
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
@@ -24,9 +23,9 @@ def login_request(request):
                 return redirect("main:home")
             else:
                 messages.error(request, "Invalid username or password.")
-        else:
+        else:            
             messages.error(request, "Invalid username or password.")
-    form = AuthenticationForm()
+    form = CustomAuthenticationForm()
     return render(request, 'main/login.html', {'login_form':form})
 
 def logout_request(request):

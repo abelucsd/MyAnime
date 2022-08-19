@@ -2,13 +2,14 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
 <div class="loginpage">    
     <form class="login-form" method="POST">
         {% csrf_token %}        
         <div class="login-fields">
         {% for field in login_form %}
             <!-- Add some JS here -->
-            <input type="text" placeholder=""> 
+            {{field}}            
         {% endfor %}
         </div>
         <button class="login-button" type="submit">Login</button>
@@ -24,5 +25,6 @@
         {% endfor %}
     </ul>
     {% endif %}
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
 </div>
 {% endblock %}
